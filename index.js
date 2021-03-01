@@ -27,7 +27,8 @@ wsServer.on("request", request => {
             const clientId = result.clientId
             const gameId = uuidv4();
             games[gameId] = {
-                "id": gameId
+                "id": gameId,
+                "players": []
             }
             const payLoad = {
                 "method": "newGameCreated",
@@ -35,6 +36,28 @@ wsServer.on("request", request => {
             }
             const connection = clients[clientId].connection
             connection.send(JSON.stringify(payLoad))
+        }       
+        if (result.method === "joinGame"){
+            console.log("Trying to join a Game! ClientId: " + result.clientId + " GameId: " + result.gameId )
+            const clientId = result.clientId
+            const gameId = result.gameId;
+            let players = games[gameId].players
+            players.push(clientId)
+            games[gameId] = {
+                "id": gameId,
+                "players": players
+            }
+            const payLoad = {
+                "method": "gameJoined",
+                "game": games[gameId]
+            }
+            console.log("game.id: " + games[gameId].id)
+            players = games[gameId].players
+            console.log("Players: " + players)
+            games[gameId].players.forEach(player => {
+                const connection = clients[player].connection
+                connection.send(JSON.stringify(payLoad))
+             })
         }
     })
 

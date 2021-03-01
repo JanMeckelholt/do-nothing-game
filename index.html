@@ -9,8 +9,18 @@
 <body>
     <h1>Doko</h1>
     <button id = 'btnNewGame'>New Game</button>
+    </br>
+    <button id = 'btnJoinGame'>Join exising Game</button>
+    <input type='text' id='txtGameId'>
+    </br>
+    <label id = 'lblJoinedPlayers'></Label>
     <script>
         const btnNewGame = document.getElementById("btnNewGame")
+        const btnJoinGame = document.getElementById("btnJoinGame")
+        const txtGameId = document.getElementById("txtGameId")
+        const lblJoinedPlayers = document.getElementById("lblJoinedPlayers")
+        txtGameId.value = ''
+       // lblJoinedPlayers.innerText = ''
 
         btnNewGame.addEventListener("click", e => {
             const payLoad = {
@@ -19,7 +29,22 @@
             }
             ws.send(JSON.stringify(payLoad))
         })
+        btnJoinGame.addEventListener("click", e => {
+            if (gameId === null){
+                gameId = txtGameId.value
+            }
+            const payLoad = {
+                "method": "joinGame",
+                "clientId": clientId,
+                "gameId": gameId
+            }
+            ws.send(JSON.stringify(payLoad))
+        })
+
+
         let clientId = null
+        let gameId = null
+        let joinedPlayers = null
         let ws = new WebSocket("ws://localhost:9090")
         ws.onmessage = message => {
             const response = JSON.parse(message.data)
@@ -31,6 +56,17 @@
             if (response.method === "newGameCreated"){
                 gameId = response.game.id
                 console.log("Game with id " + gameId + " created!")
+                txtGameId.value = gameId
+            }  
+            if (response.method === "gameJoined"){
+                gameId = response.game.id
+                console.log("Game with id " + gameId + " joined!")
+                txtGameId.value = gameId
+                lblJoinedPlayers.innerText=''
+                response.game.players.forEach(player =>{
+                    lblJoinedPlayers.innerText += player 
+                    lblJoinedPlayers.innerHTML += '<br/>' 
+                })
             }
         }
 
