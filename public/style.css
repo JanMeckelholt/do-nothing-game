@@ -1,0 +1,65 @@
+/* Fix user-agent */
+
+ 
+  /* html {
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  html, input {
+    font-family:
+      "HelveticaNeue-Light",
+      "Helvetica Neue Light",
+      "Helvetica Neue",
+      Helvetica,
+      Arial,
+      "Lucida Grande",
+      sans-serif;
+  }
+  
+ 
+  ul {
+    list-style: none;
+    word-wrap: break-word;
+  }
+
+
+
+
+body {
+  background-color: rgb(206, 206, 206);
+  margin: 100;
+  padding: 100;
+} */
+
+  /* Pages */
+  .card {display:inline-block;}
+  .pages {
+
+  }
+  
+
+  
+  /* Login Page */
+  
+  .startPage {
+    
+  }
+  
+
+  
+  .input {
+
+  }
+  
+  
+  .waitPage {
+    display: none;
+  }  
+  .playPage {
+    display: none;
+  }
+  
+
+  
+  
