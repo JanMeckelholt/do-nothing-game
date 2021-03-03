@@ -2,7 +2,7 @@
 
 ## Use of Nodejs and Websockets - without socket.io
 
-This implementation shows the use of nodejs express und websockets.
+This implementation shows the use of nodejs, express and websockets.
 
 The client-server interaction only uses plain websockets. No socket.io or similar.
 
