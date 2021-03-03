@@ -10,6 +10,17 @@ const btnLeaveGame = document.getElementById("btnLeaveGame")
 const txtGameId = document.getElementById("txtGameId")
 const txtNickName = document.getElementById("txtNickName")
 const lblJoinedPlayers = document.getElementById("lblJoinedPlayers")
+
+const txtCard1 = document.getElementById("txtCard1")
+const txtCard2 = document.getElementById("txtCard2")
+const txtCard3 = document.getElementById("txtCard3")
+const txtCard4 = document.getElementById("txtCard4")
+
+const titleCard1 = document.getElementById("titleCard1")
+const titleCard2 = document.getElementById("titleCard2")
+const titleCard3 = document.getElementById("titleCard3")
+const titleCard4 = document.getElementById("titleCard4")
+
 txtGameId.value = ''
 txtNickName.value = ''
 chkNewGame.checked = false
@@ -109,12 +120,23 @@ ws.onmessage = message => {
         })
     }    
     if (response.method === "gameStarted"){
-        gameId = response.game.id
-        console.log("Game with id " + gameId + " started!")
+        game = response.game
+        console.log("Game with id " + game.id + " started!")
         //startPage.remove()
         startPage.style.display = 'none'
         waitPage.style.display = 'none'
         playPage.style.display = 'block'
+        titleCard1.innerHTML=game.players[0].nickName
+        titleCard2.innerHTML=game.players[1].nickName
+        titleCard3.innerHTML=game.players[2].nickName
+        titleCard4.innerHTML=game.players[3].nickName
+        
+        txtCard1.innerHTML='Hello! Good to be bored!'
+        txtCard2.innerHTML='Hello! Good to be bored!'
+        txtCard3.innerHTML='Hello! Good to be bored!'
+        txtCard4.innerHTML='Hello! Good to be bored!'
+
+
         // waitPage.style.visibility = true
         // txtGameId.value = gameId
         // lblJoinedPlayers.innerText='You joined Game: ' + gameId
