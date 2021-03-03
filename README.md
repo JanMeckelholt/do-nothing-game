@@ -14,7 +14,7 @@ There are 3 Screens.
 In the start-screen you choose a nickname and either create a new game-id or past in an existing one.
 Than you connect
 
-![Start-Screen](https://github.com/JanMeckelholt/do-nothing-game/blob/master/git-pictures/start-screen.png)
+<img src="https://github.com/JanMeckelholt/do-nothing-game/blob/master/git-pictures/start-screen.png" width="200px">
 
 ### Waiting-room-Screen
 When you connect you go to the waiting room. You will stay here until 3 other player join that Game ID.
