@@ -1,3 +1,22 @@
-# doko-websocket
+# Do-Nothing-Game
 
-## Work in progress!
+## Use of Nodejs and Websockets - without socket.io
+
+This implementation shows the use of nodejs express und websockets.
+
+The client-server interaction only uses plain websockets. No socket.io or similar.
+
+## The "Game"-Flow
+
+There are 3 Screens.
+
+### Start-Screen
+In the start-screen you choose a nickname and either create a new game-id or past in an existing one.
+Than you connect
+
+### Waiting-room-Screen
+When you connect you go to the waiting room. You will stay here until 3 other player join that Game ID.
+
+### Play Screen
+At the play screen you see yourself and your 3 game partners.
+You can push your "Do absolutely nothing"-Button! :-)
