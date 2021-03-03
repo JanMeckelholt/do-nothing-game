@@ -14,15 +14,15 @@ There are 3 Screens.
 In the start-screen you choose a nickname and either create a new game-id or past in an existing one.
 Than you connect
 
-<img src="https://github.com/JanMeckelholt/do-nothing-game/blob/master/git-pictures/start-screen.png" width="200px">
+<img src="https://github.com/JanMeckelholt/do-nothing-game/blob/master/git-pictures/start-screen.png" width="400px">
 
 ### Waiting-room-Screen
 When you connect you go to the waiting room. You will stay here until 3 other player join that Game ID.
 
-<img src="https://github.com/JanMeckelholt/do-nothing-game/blob/master/git-pictures/wait-screen.png" width="200px">
+<img src="https://github.com/JanMeckelholt/do-nothing-game/blob/master/git-pictures/wait-screen.png" width="400px">
 
 ### Play Screen
 At the play screen you see yourself and your 3 game partners.
 You can push your "Do absolutely nothing"-Button! :-)
 
-<img src="https://github.com/JanMeckelholt/do-nothing-game/blob/master/git-pictures/play-screen.png" width="200px">
+<img src="https://github.com/JanMeckelholt/do-nothing-game/blob/master/git-pictures/play-screen.png" width="400px">
